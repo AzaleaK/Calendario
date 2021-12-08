@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: "Courier New", sans-serif }
+
+.colorLink {
+  color: #31C8C3;
+}
+
+.month {
+  padding: 50px 15px;
+  width: 100%;
+  background: #5DADE2;
+  text-align: center;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: black;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #F2F3F4;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #17202A;
+  text-align: center;
+}
+
+.days {
+  padding: 20px 0;
+  background:#ABEBC6;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size:12px;
+  color: #777;
+}
+
+.days li .active {
+  padding: 5px;
+  background: #A2D9CE;
+  color: white
+}
+.acho
+{
+  width: 500px;
+} 
+.hola
+{
+  margin-left: 60px;
+  margin-right: 60px;
+}  
+(max-width:720px) {
+  .weekdays li, .days li {width: 13.1%;}
+}
+
+(max-width: 420px) {
+  .weekdays li, .days li {width: 12.5%;}
+  .days li .active {padding: 2px;}
+}
+
+(max-width: 290px) {
+  .weekdays li, .days li {width: 12.2%;}
+}
+</style>
+</head>
+<body>
+<div class="acho">
+</div>
+<ceter>
+<p></p>
+<div class="hola">
+<div class="month">
+  <ul>
+    <li>
+      Diciembre -
+      <span style="font-size:20px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li><br>Domingo</li>
+  <li><br>Lunes</li>
+  <li><br>Martes</li>
+  <li><br>Miercoles</li>
+  <li><br>Jueves</li>
+  <li><br>Viernes</li>
+  <li><br>Sabado</li>
+</ul>
+
+<ul class="days">
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <% @agendas.each do |agenda| %>
+  <li>
+    <%= link_to agenda.day, agenda, class: "colorLink", class: "btn btn-outline-"%>
+  </li>
+<% end %>
+<li>01</li>
+<li>02</li>
+</ul>
+</div>
+</ceter>
+
+<!--<%= link_to "New Day", new_agenda_path %>-->
+
+</body>
+</html>

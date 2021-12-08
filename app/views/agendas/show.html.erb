@@ -1,0 +1,78 @@
+<style media="screen">
+  .backr {
+    padding: 5px 0;
+    background: #5DADE2;
+    margin: 0;
+  }
+  .pad {
+    padding: 30px;
+  }
+
+  body {
+    font-family: "Courier New", sans-serif
+   }
+
+</style>
+<div class="backr">
+<div align="center"<h2><b> Día <%= @agenda.day %> </b></h2></div>
+
+<!--<li><%= link_to "Edit", edit_agenda_path(@agenda) %></li> -->
+
+
+
+<% @agenda.tasks.each do |task| %>
+  
+</div>
+
+  
+</div>
+
+<br></br>
+
+<% end %>
+<h2>Notas:</h2>
+<p></p>
+<% @agenda.notes.each do |note| %>
+
+
+
+
+<% end %>
+<br></br>
+<h2>Crea una Tarea:</h2>
+<p></p>
+<%= form_with model: [ @agenda, @agenda.tasks.build ] do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <%= form.label :code %><br>
+    <%= form.text_area :code %>
+  </p>
+  <p>
+    <%= form.label :due_date %><br>
+    <%= form.date_field :due_date %>
+  </p>
+  <p>
+    <input class="btn btn-outline-dark" <%= form.submit %>
+  </p>
+<% end %>
+<br></br>
+<h2>Crea una nota:</h2>
+<p></p>
+<%= form_with model: [ @agenda, @agenda.notes.build ] do |form| %>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <input class="btn btn-outline-dark" <%= form.submit %>
+  </p>
+<% end %>
+</div>
+</div>
